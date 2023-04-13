@@ -1,2 +1,2 @@
-# UZeroXTwitter
-A tool to manage twitter accounts by using unofficial API
+# UZeroXBird
+A tool to manage bird accounts by using unofficial API
