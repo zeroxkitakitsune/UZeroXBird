@@ -1,5 +1,6 @@
 sessions.json
 /__pycache__
+/ui/__pycache__
 requesttest.py
 twittercreate.txt
 twitterrequests.txt
