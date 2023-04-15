@@ -89,7 +89,7 @@ class Twitter:
             data = json.loads(response.text) 
 
             user_id = data['data']['user']['result']['rest_id']
-            
+        
             data = {
                 'include_profile_interstitial_type': '1',
                 'include_blocking': '1',
@@ -107,7 +107,9 @@ class Twitter:
                 'user_id': f'{user_id}',
             }
             
-            response = requests.request('POST', 'https://twitter.com/i/api/1.1/friendships/create.json', headers=account['headers'], cookies=account['cookies'],data=data, proxies=account['proxies'])
+            account['headers']['referer'] = f'https://twitter.com/{username}'
+            account['headers']['content-type'] = 'application/x-www-form-urlencoded'
+            response = requests.post('https://twitter.com/i/api/1.1/friendships/create.json', headers=account['headers'], cookies=account['cookies'],data=data, proxies=account['proxies'])
             
             if response.status_code != 200:
                 return "Request returned an error: {} {}".format(response.status_code, response.text)
@@ -206,6 +208,7 @@ class Twitter:
         
 
         for account in accounts_to_use:
+
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet', json=payload, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
 
             if response.status_code != 200:
