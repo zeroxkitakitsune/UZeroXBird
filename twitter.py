@@ -84,9 +84,8 @@ class Twitter:
             response = requests.request('GET', 'https://twitter.com/i/api/graphql/sLVLhk0bGj3MVFEKTdax1w/UserByScreenName', params=params, cookies=account['cookies'], headers=account['headers'], proxies=account['proxies'])
 
             if response.status_code != 200:
-                raise Exception(
-                    "Request returned an error: {} {}".format(response.status_code, response.text)
-                )
+                return "Request returned an error: {} {}".format(response.status_code, response.text)
+
             data = json.loads(response.text) 
 
             user_id = data['data']['user']['result']['rest_id']
@@ -111,9 +110,9 @@ class Twitter:
             response = requests.request('POST', 'https://twitter.com/i/api/1.1/friendships/create.json', headers=account['headers'], cookies=account['cookies'],data=data, proxies=account['proxies'])
             
             if response.status_code != 200:
-                raise Exception(
-                    "Request returned an error: {} {}".format(response.status_code, response.text)
-                )
+                return "Request returned an error: {} {}".format(response.status_code, response.text)
+        
+        return "Success"
 
     def tweet(self, names, text):
     
@@ -161,9 +160,8 @@ class Twitter:
         for account in accounts_to_use:        
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/shjyg0Y1ez2QoihsYD05xA/CreateTweet', json=payload, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
             if response.status_code != 200:
-                raise Exception(
-                    "Request returned an error: {} {}".format(response.status_code, response.text)
-                )
+                return "Request returned an error: {} {}".format(response.status_code, response.text)
+        return "Success"
 
     
     def retweet(self, names, link, pause):
@@ -185,11 +183,10 @@ class Twitter:
             
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/ojPdsZsimiJrUGLR1sjUtA/CreateRetweet', json=payload, headers=account['headers'], cookies=account['cookies'], proxies=account['proxies'])
             if response.status_code != 200:
-                raise Exception(
-                    "Request returned an error: {} {}".format(response.status_code, response.text)
-                )
+                return "Request returned an error: {} {}".format(response.status_code, response.text)
             if pause:
                 time.sleep(random.randint(1, 60))
+        return "Success"
 
     def like(self, names, link):
 
@@ -212,9 +209,8 @@ class Twitter:
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet', json=payload, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
 
             if response.status_code != 200:
-                raise Exception(
-                    "Request returned an error: {} {}".format(response.status_code, response.text)
-                )
+                return "Request returned an error: {} {}".format(response.status_code, response.text)
+        return "Success"
     
     def delete(self, names):
         for name in names:

@@ -12,6 +12,7 @@ from ui.tweetui import Ui_tweetDialog
 from ui.retweetui import Ui_retweetDialog
 from ui.likeui import Ui_likeDialog
 from ui.proxyui import Ui_proxyDialog
+from ui.statusui import Ui_statusDialog
 
 twitter = Twitter()
 
@@ -60,6 +61,12 @@ class likeDialog(QDialog):
     def __init__(self):
         super(likeDialog, self).__init__()
         self.ui = Ui_likeDialog()
+        self.ui.setupUi(self)
+
+class statusDialog(QDialog):
+    def __init__(self):
+        super(statusDialog, self).__init__()
+        self.ui = Ui_statusDialog()
         self.ui.setupUi(self)
 
 def enableBtns(selected, deselected):
@@ -119,6 +126,7 @@ def follow():
     global twitter
 
     follow_dialog = followDialog()
+    status_dialog = statusDialog()
     
     rows = window.ui.linkedAccountsTableWidget.selectionModel().selectedRows()
     
@@ -127,12 +135,15 @@ def follow():
         names = []
         for row in rows:
             names.append(window.ui.linkedAccountsTableWidget.model().data(window.ui.linkedAccountsTableWidget.model().index(row.row(), 0)))
-        twitter.follow(names, follow_dialog.ui.followText.toPlainText())
+        status = twitter.follow(names, follow_dialog.ui.followText.toPlainText())
+        status_dialog.ui.statusLabel.setText(status)
+        status_dialog.exec()
 
 def tweet():
     global twitter
 
     tweet_dialog = tweetDialog()
+    status_dialog = statusDialog()
     
     rows = window.ui.linkedAccountsTableWidget.selectionModel().selectedRows()
     
@@ -141,12 +152,15 @@ def tweet():
         names = []
         for row in rows:
             names.append(window.ui.linkedAccountsTableWidget.model().data(window.ui.linkedAccountsTableWidget.model().index(row.row(), 0)))
-        twitter.tweet(names, tweet_dialog.ui.tweetText.toPlainText())
+        status = twitter.tweet(names, tweet_dialog.ui.tweetText.toPlainText())
+        status_dialog.ui.statusLabel.setText(status)
+        status_dialog.exec()
 
 def retweet():
     global twitter
 
     retweet_dialog = retweetDialog()
+    status_dialog = statusDialog()
     
     rows = window.ui.linkedAccountsTableWidget.selectionModel().selectedRows()
     
@@ -156,9 +170,13 @@ def retweet():
         for row in rows:
             names.append(window.ui.linkedAccountsTableWidget.model().data(window.ui.linkedAccountsTableWidget.model().index(row.row(), 0)))
         if retweet_dialog.ui.pauseCheckBox.isChecked():
-            twitter.retweet(names, retweet_dialog.ui.rtText.toPlainText(), True)
+            status = twitter.retweet(names, retweet_dialog.ui.rtText.toPlainText(), True)
+            status_dialog.ui.statusLabel.setText(status)
+            status_dialog.exec()
         else:
-            twitter.retweet(names, retweet_dialog.ui.rtText.toPlainText(), False)
+            status = twitter.retweet(names, retweet_dialog.ui.rtText.toPlainText(), False)
+            status_dialog.ui.statusLabel.setText(status)
+            status_dialog.exec()
 
 
 def like():
@@ -166,6 +184,7 @@ def like():
     global twitter
 
     like_dialog = likeDialog()
+    status_dialog = statusDialog()
     
     rows = window.ui.linkedAccountsTableWidget.selectionModel().selectedRows()
     button = like_dialog.exec()
@@ -173,7 +192,9 @@ def like():
         names = []
         for row in rows:
             names.append(window.ui.linkedAccountsTableWidget.model().data(window.ui.linkedAccountsTableWidget.model().index(row.row(), 0)))
-        twitter.like(names, like_dialog.ui.likeText.toPlainText())
+        status = twitter.like(names, like_dialog.ui.likeText.toPlainText())
+        status_dialog.ui.statusLabel.setText(status)
+        status_dialog.exec()
 
 def delete():
     
