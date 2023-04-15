@@ -1,0 +1,123 @@
+tweet request
+
+POST https://twitter.com/i/api/graphql/shjyg0Y1ez2QoihsYD05xA/CreateTweet HTTP/1.1
+Host: twitter.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+content-type: application/json
+authorization: Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+x-twitter-auth-type: OAuth2Session
+x-csrf-token: 2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356
+x-twitter-client-language: en
+x-twitter-active-user: yes
+Content-Length: 1155
+Origin: https://twitter.com
+DNT: 1
+Connection: keep-alive
+Referer: https://twitter.com/compose/tweet
+Cookie: gt=1646303941292900353; guest_id=v1%3A168134442108836492; ct0=2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356; _twitter_sess=BAh7CSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7ADoPY3JlYXRlZF9hdGwrCGL073eHAToMY3NyZl9p%250AZCIlOTg2NmNiZGIwMzU3MjM4NTk5NTE4YmUxYTgxMjkxNTM6B2lkIiVkOWYy%250AODE1ZDhlMWYyM2U3YTQzYzYzZDhiYmM1MWUwMg%253D%253D--36f8ed59fe8f2486b55e1e8f41728d43c24bbfeb; g_state={"i_p":1681351628617,"i_l":1}; kdt=hoEVFq4xuHSRU66HoCwuTnoK2XgjV6U8tIuQp0Zq; twid=u%3D1646196047453069314; auth_token=6a20ed8c6de15bc4e770b5693ffb645d89412005; att=1-Y1POx00TX3jWsUpgMnVJmjw6DLyXXYkyXfUkQ6r7; lang=en; d_prefs=MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw; guest_id_ads=v1%3A168134442108836492; guest_id_marketing=v1%3A168134442108836492; personalization_id="v1_tOY4gs/8WDC6KFE4HisAjw=="
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+
+{"variables":{"tweet_text":"asdddd","dark_request":false,"media":{"media_entities":[],"possibly_sensitive":false},"withDownvotePerspective":false,"semantic_annotation_ids":[]},"features":{"tweetypie_unmention_optimization_enabled":true,"vibe_api_enabled":true,"responsive_web_edit_tweet_api_enabled":true,"graphql_is_translatable_rweb_tweet_is_translatable_enabled":true,"view_counts_everywhere_api_enabled":true,"longform_notetweets_consumption_enabled":true,"tweet_awards_web_tipping_enabled":false,"interactive_text_enabled":true,"responsive_web_text_conversations_enabled":false,"longform_notetweets_rich_text_read_enabled":false,"blue_business_profile_image_shape_enabled":false,"responsive_web_graphql_exclude_directive_enabled":true,"verified_phone_label_enabled":false,"freedom_of_speech_not_reach_fetch_enabled":false,"standardized_nudges_misinfo":true,"tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled":false,"responsive_web_graphql_timeline_navigation_enabled":true,"responsive_web_graphql_skip_user_profile_image_extensions_enabled":false,"responsive_web_enhance_cards_enabled":false},"queryId":"shjyg0Y1ez2QoihsYD05xA"}
+
+
+
+
+
+retweet request
+
+POST https://twitter.com/i/api/graphql/ojPdsZsimiJrUGLR1sjUtA/CreateRetweet HTTP/1.1
+Host: twitter.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+content-type: application/json
+authorization: Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+x-twitter-auth-type: OAuth2Session
+x-csrf-token: 2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356
+x-twitter-client-language: en
+x-twitter-active-user: yes
+Content-Length: 104
+Origin: https://twitter.com
+DNT: 1
+Connection: keep-alive
+Referer: https://twitter.com/home
+Cookie: gt=1646303941292900353; guest_id=v1%3A168134442108836492; ct0=2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356; _twitter_sess=BAh7CSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7ADoPY3JlYXRlZF9hdGwrCGL073eHAToMY3NyZl9p%250AZCIlOTg2NmNiZGIwMzU3MjM4NTk5NTE4YmUxYTgxMjkxNTM6B2lkIiVkOWYy%250AODE1ZDhlMWYyM2U3YTQzYzYzZDhiYmM1MWUwMg%253D%253D--36f8ed59fe8f2486b55e1e8f41728d43c24bbfeb; g_state={"i_p":1681351628617,"i_l":1}; kdt=hoEVFq4xuHSRU66HoCwuTnoK2XgjV6U8tIuQp0Zq; twid=u%3D1646196047453069314; auth_token=6a20ed8c6de15bc4e770b5693ffb645d89412005; att=1-Y1POx00TX3jWsUpgMnVJmjw6DLyXXYkyXfUkQ6r7; lang=en; d_prefs=MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw; guest_id_ads=v1%3A168134442108836492; guest_id_marketing=v1%3A168134442108836492; personalization_id="v1_tOY4gs/8WDC6KFE4HisAjw=="
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+
+{"variables":{"tweet_id":"1642976364080041984","dark_request":false},"queryId":"ojPdsZsimiJrUGLR1sjUtA"}
+
+
+
+
+follow
+
+POST https://twitter.com/i/api/1.1/friendships/create.json HTTP/1.1
+Host: twitter.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+authorization: Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+x-twitter-auth-type: OAuth2Session
+x-csrf-token: 2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356
+x-twitter-client-language: en
+x-twitter-active-user: yes
+content-type: application/x-www-form-urlencoded
+Content-Length: 301
+Origin: https://twitter.com
+DNT: 1
+Connection: keep-alive
+Referer: https://twitter.com/DailyMirror
+Cookie: gt=1646303941292900353; guest_id=v1%3A168134442108836492; ct0=2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356; _twitter_sess=BAh7CSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7ADoPY3JlYXRlZF9hdGwrCGL073eHAToMY3NyZl9p%250AZCIlOTg2NmNiZGIwMzU3MjM4NTk5NTE4YmUxYTgxMjkxNTM6B2lkIiVkOWYy%250AODE1ZDhlMWYyM2U3YTQzYzYzZDhiYmM1MWUwMg%253D%253D--36f8ed59fe8f2486b55e1e8f41728d43c24bbfeb; g_state={"i_p":1681351628617,"i_l":1}; kdt=hoEVFq4xuHSRU66HoCwuTnoK2XgjV6U8tIuQp0Zq; twid=u%3D1646196047453069314; auth_token=6a20ed8c6de15bc4e770b5693ffb645d89412005; att=1-Y1POx00TX3jWsUpgMnVJmjw6DLyXXYkyXfUkQ6r7; lang=en; d_prefs=MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw; guest_id_ads=v1%3A168134442108836492; guest_id_marketing=v1%3A168134442108836492; personalization_id="v1_tOY4gs/8WDC6KFE4HisAjw=="
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+include_profile_interstitial_type=1&include_blocking=1&include_blocked_by=1&include_followed_by=1&include_want_retweets=1&include_mute_edge=1&include_can_dm=1&include_can_media_tag=1&include_ext_has_nft_avatar=1&include_ext_is_blue_verified=1&include_ext_verified_type=1&skip_status=1&user_id=981100990089846786
+
+
+like
+
+POST https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet HTTP/1.1
+Host: twitter.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+content-type: application/json
+authorization: Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA
+x-twitter-auth-type: OAuth2Session
+x-csrf-token: 2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356
+x-twitter-client-language: en
+x-twitter-active-user: yes
+Content-Length: 83
+Origin: https://twitter.com
+DNT: 1
+Connection: keep-alive
+Referer: https://twitter.com/MirrorBreaking_
+Cookie: gt=1646303941292900353; guest_id=v1%3A168134442108836492; ct0=2f5580360c72173a0d9bf9515071f7e82f0e7696c6c211972308b58caabac1d2e1e33302516312045570ef63257344afef96d8fec5eddcb8d269ba9dfb2be983a3549664fb81081787ce3eabf4b28356; _twitter_sess=BAh7CSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7ADoPY3JlYXRlZF9hdGwrCGL073eHAToMY3NyZl9p%250AZCIlOTg2NmNiZGIwMzU3MjM4NTk5NTE4YmUxYTgxMjkxNTM6B2lkIiVkOWYy%250AODE1ZDhlMWYyM2U3YTQzYzYzZDhiYmM1MWUwMg%253D%253D--36f8ed59fe8f2486b55e1e8f41728d43c24bbfeb; g_state={"i_p":1681351628617,"i_l":1}; kdt=hoEVFq4xuHSRU66HoCwuTnoK2XgjV6U8tIuQp0Zq; twid=u%3D1646196047453069314; auth_token=6a20ed8c6de15bc4e770b5693ffb645d89412005; att=1-Y1POx00TX3jWsUpgMnVJmjw6DLyXXYkyXfUkQ6r7; lang=en; d_prefs=MToxLGNvbnNlbnRfdmVyc2lvbjoyLHRleHRfdmVyc2lvbjoxMDAw; guest_id_ads=v1%3A168134442108836492; guest_id_marketing=v1%3A168134442108836492; personalization_id="v1_tOY4gs/8WDC6KFE4HisAjw=="
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
+{"variables":{"tweet_id":"1170974762929131520"},"queryId":"lI07N6Otwv1PhnEgXILM7A"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
