@@ -42,7 +42,7 @@ class Twitter:
         account['name'] = name
         account['guest_id'] = context.cookies['guest_id']
         account['headers'] = context.headers
-        account['headers']['referer'] = ''
+        account['headers']['referer'] = 'https://twitter.com/home'
         account['cookies'] = context.cookies
         account['proxies'] = {
             'http':proxy,
@@ -209,7 +209,6 @@ class Twitter:
         
 
         for account in accounts_to_use:
-            account['headers']['referer'] = 'https://twitter.com/home'
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet', json=payload, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
 
             if response.status_code != 200:
