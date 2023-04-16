@@ -169,11 +169,12 @@ class Twitter:
     def retweet(self, names, link, pause):
 
         tweetid = ""
-        for c in link:
-            if c.isdigit():
-                tweetid = tweetid + c
-        print("Tweet ID: " + tweetid) 
-        payload = {"variables":{"tweet_id":tweetid,"dark_request":False},"queryId":"ojPdsZsimiJrUGLR1sjUtA"}
+
+        link = link.rsplit("/")
+        
+        #print("Tweet ID: " + link[len(link) - 1]) 
+        tweetid = link[len(link) - 1]
+        payload = {"variables":{"tweet_id":f"{tweetid}","dark_request":False},"queryId":"ojPdsZsimiJrUGLR1sjUtA"}
 
         accounts_to_use = []
         for name in names:
@@ -195,12 +196,17 @@ class Twitter:
     def like(self, names, link):
 
         tweetid = ""
-        for c in link:
-            if c.isdigit():
-                tweetid = tweetid + c
-        print("Tweet ID: " + tweetid) 
 
-        payload = {"variables":{"tweet_id":tweetid},"queryId":"lI07N6Otwv1PhnEgXILM7A"}
+        link = link.rsplit("/")
+        
+        #print("Tweet ID: " + link[len(link) - 1]) 
+        tweetid = link[len(link) - 1]
+        json_data = {
+            'variables': {
+                'tweet_id': f'{str(tweetid)}',
+            },
+            'queryId': 'lI07N6Otwv1PhnEgXILM7A',
+        }
 
         accounts_to_use = []
         for name in names:
@@ -211,7 +217,7 @@ class Twitter:
 
         for account in accounts_to_use:
 
-            response = requests.request('POST', 'https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet', json=payload, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
+            response = requests.request('POST', 'https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet', json=json_data, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
 
             if response.status_code != 200:
                 return "Request returned an error: {} {}".format(response.status_code, response.text)
