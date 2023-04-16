@@ -120,7 +120,7 @@ class Twitter:
     
         payload = {
             'variables': {
-                'tweet_text': f'{text}',
+                'tweet_text': text,
                 'dark_request': False,
                 'media': {
                     'media_entities': [],
