@@ -152,29 +152,30 @@ class Twitter:
             },
             'queryId': 'shjyg0Y1ez2QoihsYD05xA',
         }
-
+        
         accounts_to_use = []
         for name in names:
             for account in self.listAccounts:
                 if account['name'] == name:
                    accounts_to_use.append(account) 
 
-        for account in accounts_to_use:        
-            response = requests.request('POST', 'https://twitter.com/i/api/graphql/shjyg0Y1ez2QoihsYD05xA/CreateTweet', json=payload, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
+        for account in accounts_to_use:
+            account['headers']['referer'] = 'https://twitter.com/compose/tweet'
+            account['headers']['content-type'] = 'application/json'       
+            response = requests.request('POST', 'https://twitter.com/i/api/graphql/shjyg0Y1ez2QoihsYD05xA/CreateTweet', json=payload, headers=account['headers'], cookies=account['cookies'], proxies=account['proxies'])
             if response.status_code != 200:
+
+                print("Request returned an error: {} {}".format(response.status_code, response.text))
                 return "Request returned an error: {} {}".format(response.status_code, response.text)
         return "Success"
 
     
     def retweet(self, names, link, pause):
 
-        tweetid = ""
-
-        link = link.rsplit("/")
+        tweetid = link.rsplit("/")
         
         #print("Tweet ID: " + link[len(link) - 1]) 
-        tweetid = link[len(link) - 1]
-        payload = {"variables":{"tweet_id":f"{tweetid}","dark_request":False},"queryId":"ojPdsZsimiJrUGLR1sjUtA"}
+        payload = {"variables":{"tweet_id":f"{tweetid[len(tweetid) - 1]}","dark_request":False},"queryId":"ojPdsZsimiJrUGLR1sjUtA"}
 
         accounts_to_use = []
         for name in names:
@@ -183,7 +184,8 @@ class Twitter:
                    accounts_to_use.append(account) 
         
         for account in accounts_to_use:
-            
+            account['headers']['referer'] = f'{link}'
+            account['headers']['content-type'] = 'application/json'     
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/ojPdsZsimiJrUGLR1sjUtA/CreateRetweet', json=payload, headers=account['headers'], cookies=account['cookies'], proxies=account['proxies'])
             if response.status_code != 200:
                 return "Request returned an error: {} {}".format(response.status_code, response.text)
@@ -195,15 +197,12 @@ class Twitter:
 
     def like(self, names, link):
 
-        tweetid = ""
-
         link = link.rsplit("/")
         
         #print("Tweet ID: " + link[len(link) - 1]) 
-        tweetid = link[len(link) - 1]
         json_data = {
             'variables': {
-                'tweet_id': f'{str(tweetid)}',
+                'tweet_id': f'{str(link[len(link) - 1])}',
             },
             'queryId': 'lI07N6Otwv1PhnEgXILM7A',
         }
@@ -216,7 +215,8 @@ class Twitter:
         
 
         for account in accounts_to_use:
-
+            account['headers']['referer'] = f'{link}'
+            account['headers']['content-type'] = 'application/json'   
             response = requests.request('POST', 'https://twitter.com/i/api/graphql/lI07N6Otwv1PhnEgXILM7A/FavoriteTweet', json=json_data, headers=account['headers'], cookies=account['cookies'],proxies=account['proxies'])
 
             if response.status_code != 200:
