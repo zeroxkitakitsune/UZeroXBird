@@ -188,6 +188,8 @@ class Twitter:
                 return "Request returned an error: {} {}".format(response.status_code, response.text)
             if pause:
                 time.sleep(random.randint(1, 60))
+            else:
+                time.sleep(5)
         return "Success"
 
     def like(self, names, link):
